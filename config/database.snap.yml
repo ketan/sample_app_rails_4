@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode 
+  username: <%= ENV['SNAP_DB_MYSQL_USER'] %>
+  password: <%= ENV['SNAP_DB_MYSQL_PASSWORD'] %>
+  pool: 5
+  timeout: 5000
+  min_messages: WARNING
+  host: <%= ENV['SNAP_DB_PG_HOST'] %> 
+  port: <%= ENV['SNAP_DB_PG_PORT'] %>
+development:
+  <<: *default
+  database: app_development
+test:
+  <<: *default
+  database: app_test<%= ENV['TEST_ENV_NUMBER'] %>
