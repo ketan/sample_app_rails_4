@@ -1,8 +1,8 @@
 default: &default
   adapter: postgresql
   encoding: unicode 
-  username: <%= ENV['SNAP_DB_MYSQL_USER'] %>
-  password: <%= ENV['SNAP_DB_MYSQL_PASSWORD'] %>
+  username: <%= ENV['SNAP_DB_PG_USER'] %>
+  password: <%= ENV['SNAP_DB_PG_PASSWORD'] %>
   pool: 5
   timeout: 5000
   min_messages: WARNING
